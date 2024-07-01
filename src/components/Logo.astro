@@ -1,0 +1,18 @@
+---
+import { SITE } from 'astrowind:config';
+import Image from './common/Image.astro';
+import logoPng from '../assets/images/logo.png'
+---
+
+<span
+  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
+>
+  <Image
+    src={logoPng}
+    alt="Astrowind Logo"
+    width="84"
+    height="84"
+    class="inline-block mr-6"
+  />
+ {SITE?.name}
+</span>

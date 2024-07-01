@@ -1,0 +1,254 @@
+---
+import Layout from "~/layouts/PageLayout.astro";
+
+import Hero from "~/components/widgets/Hero.astro";
+import Note from "~/components/widgets/Note.astro";
+import Features from "~/components/widgets/Features.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import Content from "~/components/widgets/Content.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import FAQs from "~/components/widgets/FAQs.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+
+import jamesub from "../assets/images/jamesub.jpg";
+import team from "../assets/images/team.jpg";
+
+const metadata = {
+  title:
+    "Marine Design Club - Crafting the Future of Marine Design at UBC Okanagan.",
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: "primary",
+        text: "Join Us!",
+        href: "https://github.com/onwidget/astrowind",
+        target: "_blank",
+        icon: "fluent:people-team-24-filled",
+      },
+      { text: "Learn more", href: "#features" },
+    ]}
+    image={{
+      src: "~/assets/images/hero-image.png",
+      alt: "AstroWind Hero Image",
+    }}
+  >
+    <Fragment slot="title">
+      Okanagan<span class="hidden xl:inline"></span>
+      <span class="text-accent dark:text-white highlight">Marine Design</span>
+      Club
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        The <span class="font-semibold">Marine Design Club</span> Is Crafting the
+        Future of Marine Design at UBC Okanagan.
+      </span>
+      This is the first and only club at UBCO dedicated to autonomous vehicles!
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="Why Us?"
+    tagline="Why Us?"
+    title="What you get with the Marine Design Club"
+    subtitle="One of the most professional and innovative teams at UBC Okanagan. With the opportunity to work with cutting edge technology."
+    items={[
+      {
+        title: "Passionate Team",
+        description:
+          "Join a team of students who are working together on cutting edge robotics. We are always looking for new members to join our team including Engineering, Software and Management students.",
+        icon: "fluent:heart-24-filled",
+      },
+      {
+        title: "Latest Technology",
+        description:
+          "We are always working with the latest technology in the field of Marine Design. You can have the chance to work with power systems, 3D mapping cameras, Machine Learning and much more.",
+        icon: "fluent:developer-board-16-filled",
+      },
+      {
+        title: "Access to Resources",
+        description:
+          "Through our generous sponsors, we have access to a wide range of resources including funding, equipment and mentorship. We are always looking for new sponsors to help us grow.",
+        icon: "tabler:components",
+      },
+      {
+        title: "Professional Development",
+        description:
+          "We are always looking for new ways to help our members grow. Our Team Leads are always willing to provide insight into our projects.",
+        icon: "fluent:people-team-24-filled",
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="About us"
+    title="Where we're at in 2024"
+    items={[
+      {
+        title: "Design our first Robotic Submarine",
+        description:
+          "We have currently designed our first robotic submarine from scratch and are currently assembling it right now.",
+      },
+      {
+        title: "Autonomous path routing and navigation",
+        description:
+          "Using the Intel RealSense 3D camera and a DVL we have achieved accurate navigation underwater",
+      },
+      {
+        title: "Ready to Compete in the RoboSub 2024 competition",
+        description:
+          "We are all set to travel to San-Diego for the 2024 RoboSub Competition",
+      },
+    ]}
+    image={{
+      src: jamesub,
+      alt: "Colorful Image",
+    }}
+  >
+    <Fragment slot="content">
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        What we've completed
+      </h3>
+      Have a look at some of the tasks we have completed so far.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="How we got started."
+    items={[
+      {
+        title: "Club Formed - September 2023",
+        description:
+          "The Marine Design club (formally the Marine Design Club) was founded in 2023 and quickly gained it's first members.",
+        icon: "fluent:people-team-24-filled",
+      },
+      {
+        title: "First Designs - October 2023",
+        description:
+          "We started working on our first ideas and brainstorming how we wanted to tackle the challenges of designing an autonomous submarine.",
+        icon: "fluent:design-ideas-24-filled",
+      },
+      {
+        title: "Design Review - February 2024",
+        description:
+          "The Design Review was our opportunity to take a look at what we had accomplished so far. This was also the last step before we ordered our components.",
+        icon: "material-symbols:rate-review",
+      },
+      {
+        title: "Ready!",
+        icon: "tabler:check",
+      },
+    ]}
+    image={{
+      src: team.src,
+      alt: "Steps image",
+    }}
+  />
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Find out more about us in our blog"
+    information={`The blog is used to keep our members and sponsors up to date with the latest news and events. We also use it to share our progress and achievements.
+                `}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the Okanagan Marine Design Club."
+    tagline="FAQs"
+    classes={{ container: "max-w-6xl" }}
+    items={[
+      {
+        title: "Why the Marine Design Club?",
+        description:
+          "The Marine Design Club provides the unique opportunity to work with cutting edge technology and a passionate team. It also allows you to gain valuable real world experience and make connections with industry professionals.",
+      },
+      {
+        title: "Do I need to have experience to join?",
+        description:
+          "Absolutely not! Of course, if you have experience that is great, but we are always looking for new members who are passionate and willing to learn. We have a team of experienced members who are always willing to help you learn and grow.",
+      },
+      {
+        title: "What if I'm not an Engineering student?",
+        description:
+          "That's okay! We are looking for students from all faculties including Engineering, Software, Management and more. We believe that diversity is key to success and we are always looking for new members to join our team.",
+      },
+      {
+        title: "Is there a cost to join?",
+        description:
+          "Right now there is no cost to join the Marine Design Club. We are always looking for new sponsors to help us grow and provide our members with the resources they need to succeed.",
+      },
+      {
+        title: "What is the time commitment?",
+        description:
+          "We are flexible depending on how much time you are able to commit. We typically have weekly meetings and work sessions, however depending on your time availability the part of the project you work on will be adjusted accordingly. Even if you don't have much time to commit, you can always talk to one of our Team Leads who will always have something small for you to work on.",
+      },
+      {
+        title: "What is the most important thing I should know before joining?",
+        description:
+          "This club is all about learning and growing. We are always looking for ways to improve and are very open to new ideas. No matter if you're a first year student or a fourth year student, we believe that everyone has something to offer and we are always looking for new members to join our team.",
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: "Members", amount: "20" },
+      { title: "Funding", amount: "$50K" },
+      { title: "Sponsors", amount: "10" },
+      { title: "Robot Subs", amount: "1" },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: "primary",
+        text: "Send Us A message!",
+        href: "/contact",
+        icon: "tabler:user-heart",
+      },
+    ]}
+  >
+    <Fragment slot="title"> Join Now! </Fragment>
+
+    <Fragment slot="subtitle">
+      You have already scrolled to the bottom, might as well join :)<br
+        class="hidden md:inline"
+      />Don't waste more time!
+    </Fragment>
+  </CallToAction>
+</Layout>
