@@ -6,14 +6,14 @@ export const headerData = {
       text: "Home",
       href: "/",
     },
-    {
-      text: "Blog",
-      href: getPermalink("/blog"),
-    },
-    {
-      text: "Sponsorships",
-      href: getPermalink("/contact"),
-    },
+    // {
+    //   text: "Blog",
+    //   href: getPermalink("/blog"),
+    // },
+    // {
+    //   text: "Sponsorships",
+    //   href: getPermalink("/contact"),
+    // },
   ],
   actions: [
     {
