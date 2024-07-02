@@ -1,0 +1,49 @@
+---
+import Features2 from "~/components/widgets/Features2.astro";
+import Features3 from "~/components/widgets/Features3.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Stats from "~/components/widgets/Stats.astro";
+import Steps2 from "~/components/widgets/Steps2.astro";
+import Layout from "~/layouts/PageLayout.astro";
+import workingteam from "../assets/images/workingteam.jpg";
+import Grid from "~/components/blog/Grid.astro";
+
+const metadata = {
+  title: "Sponsors",
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="Sponsors"
+    image={{
+      src: workingteam,
+      alt: "Image of our team working",
+    }}
+  >
+    <Fragment slot="title">
+      We would like to thank all of our<br />
+      <span class="text-accent dark:text-white highlight">
+        Amazing Sponsors</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      First of all, We would like to give a massive thank you to all of our
+      sponsors. Your generosity with your time, resources, and support has been
+      invaluable to us. We are so grateful as none of this would be possible
+      without you.
+    </Fragment>
+  </Hero>
+  <Features2
+    title="Our Sponsors"
+    items={[
+      {
+        title: "Sponsor 1",
+        description: "Description of Sponsor 1",
+      },
+    ]}
+  />
+</Layout>
