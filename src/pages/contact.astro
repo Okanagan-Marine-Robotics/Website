@@ -3,11 +3,48 @@ import Layout from "~/layouts/PageLayout.astro";
 import HeroText from "~/components/widgets/HeroText.astro";
 import ContactUs from "~/components/widgets/Contact.astro";
 import Features2 from "~/components/widgets/Features2.astro";
-
 const metadata = {
   title: "Contact",
 };
+
+const serviceKey = import.meta.env.VITE_SERVICE_KEY;
+const templateKey = import.meta.env.VITE_JOIN_TEMPLATE_KEY;
+const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 ---
+
+<script
+  is:inline
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+<script is:inline define:vars={{ serviceKey, templateKey, publicKey }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("form");
+    const messageSentElement = document.getElementById("message-sent");
+
+    if (form) {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log("Form submitted");
+
+        console.log(serviceKey, templateKey, publicKey);
+        console.log(form);
+
+        emailjs.sendForm(serviceKey, templateKey, form).then(
+          (result) => {
+            console.log(result.text);
+            form.reset();
+            messageSentElement.style.display = "block";
+          },
+          (error) => {
+            console.log("Error sending email");
+            console.log(error.text);
+          }
+        );
+      });
+    }
+  });
+</script>
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
