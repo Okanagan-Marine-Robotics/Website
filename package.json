@@ -1,7 +1,7 @@
 {
-  "name": "@onwidget/astrowind",
+  "name": "okmarinedesign",
   "version": "1.0.0-beta.38",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
+  "description": "Okanagan Marine Design New Website 2024",
   "type": "module",
   "private": true,
   "engines": {
