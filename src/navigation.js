@@ -10,10 +10,10 @@ export const headerData = {
     //   text: "Blog",
     //   href: getPermalink("/blog"),
     // },
-    // {
-    //   text: "Sponsorships",
-    //   href: getPermalink("/contact"),
-    // },
+    {
+      text: "Sponsorships",
+      href: getPermalink("/sponsors"),
+    },
   ],
   actions: [
     {

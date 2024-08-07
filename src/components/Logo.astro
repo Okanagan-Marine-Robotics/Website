@@ -1,7 +1,7 @@
 ---
-import { SITE } from 'astrowind:config';
-import Image from './common/Image.astro';
-import logoPng from '../assets/images/logo.png'
+import { SITE } from "astrowind:config";
+import Image from "./common/Image.astro";
+import logoPng from "../assets/images/logo.png";
 ---
 
 <span
@@ -12,7 +12,7 @@ import logoPng from '../assets/images/logo.png'
     alt="Astrowind Logo"
     width="84"
     height="84"
-    class="inline-block mr-6"
+    class="mr-6 sm:inline-block hidden"
   />
- {SITE?.name}
+  {SITE?.name}
 </span>
