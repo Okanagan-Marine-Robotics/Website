@@ -34,7 +34,7 @@ const SearchBar = ({ posts }: { posts: Post[] }) => {
         placeholder="Search..."
         value={searchTerm}
         onChange={handleSearch}
-        className="p-2 rounded-full border-gray-400 border bg-transparent  leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500  dark:hover:border-slate-800 dark:hover:bg-slate-800 cursor-pointer"
+        className="rounded-full border-gray-400 border bg-transparent leading-snug transition py-2 px-4 md:px-4 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500  dark:hover:border-slate-800 dark:hover:bg-slate-800 cursor-pointer"
       />
       <ul>{/* Render search results here */}</ul>
     </div>
