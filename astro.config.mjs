@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
-import { icon } from "astro-icon";
+import icon from "astro-icon";
 import compress from "astro-compress";
 import astrowind from "./vendor/integration";
 import {
@@ -83,9 +83,6 @@ export default defineConfig({
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
   vite: {
-    ssr: {
-      noExternal: ["astro-icon", "cheerio", "@iconify"],
-    },
     resolve: {
       alias: {
         "~": path.resolve(__dirname, "./src"),
