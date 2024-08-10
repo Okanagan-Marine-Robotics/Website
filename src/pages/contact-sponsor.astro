@@ -3,11 +3,11 @@ import Layout from "~/layouts/PageLayout.astro";
 import HeroText from "~/components/widgets/HeroText.astro";
 import ContactUs from "~/components/widgets/Contact.astro";
 const metadata = {
-  title: "Contact",
+  title: "Sponsor Contact",
 };
 
 const serviceKey = import.meta.env.VITE_SERVICE_KEY;
-const templateKey = import.meta.env.VITE_JOIN_TEMPLATE_KEY;
+const templateKey = import.meta.env.VITE_SPONSORSHIP_TEMPLATE_KEY;
 const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 ---
 
@@ -31,8 +31,6 @@ const publicKey = import.meta.env.VITE_PUBLIC_KEY;
         console.log(serviceKey, templateKey, publicKey);
         console.log(form);
 
-        console.log(params);
-
         emailjs.sendForm(serviceKey, templateKey, form).then(
           (response) => {
             console.log("SUCCESS!", response.status, response.text);
@@ -51,12 +49,15 @@ const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <HeroText
+    tagline="Are you interested in sponsoring us?"
+    title="We'd love to hear from you!"
+  />
 
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="Let us know whether you would like to join the club or if you have any questions."
+    title="Please fill out the form below."
+    subtitle="We will get back to you as soon as possible."
     inputs={[
       {
         type: "text",

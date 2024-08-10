@@ -15,6 +15,9 @@ import CellulaRobotics from "../assets/images/sponsors/CellulaRobotics.png";
 import Mouser from "../assets/images/sponsors/Mouser.png";
 import RMMC from "../assets/images/sponsors/RMMC.png";
 import Mearls from "../assets/images/sponsors/Mearls.png";
+import Button from "~/components/ui/Button.astro";
+import PDFViewer from "~/components/react/PDFViewer";
+import sponsorshipPackage from "../assets/pdf/Sponsorship Package - Okanagan Marine Design 2024.pdf";
 
 const metadata = {
   title: "Sponsors",
@@ -32,17 +35,16 @@ const metadata = {
     }}
   >
     <Fragment slot="title">
-      We would like to thank all of our<br />
+      Marine Design extends gratitude to our<br />
       <span class="text-accent dark:text-white highlight">
-        Amazing Sponsors</span
+        Industry Sponsors</span
       >
     </Fragment>
 
     <Fragment slot="subtitle">
-      First of all, We would like to give a massive thank you to all of our
-      sponsors. Your generosity with your time, resources, and support has been
-      invaluable to us. We are so grateful as none of this would be possible
-      without you.
+      We would like to give a massive thank you to all of our sponsors. Your
+      generosity with your time, resources, and support has been invaluable to
+      us. We are so grateful as none of this would be possible without you.
     </Fragment>
   </Hero>
 
@@ -113,6 +115,29 @@ const metadata = {
             class="!object-scale-down filter dark:brightness-[10000000%]"
           />
         </div>
+      </div>
+    </div>
+    <div class="flex flex-row justify-center mt-16">
+      <div class="flex-col flex">
+        <h2
+          class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl md:text-4xl"
+        >
+          Are you interested in sponsoring us?
+        </h2>
+        <div class="flex flex-row justify-center mb-4">
+          <Button href="/contact-sponsor" class="mt-4" variant="primary">
+            Contact Us
+          </Button>
+          <Button
+            href={sponsorshipPackage}
+            class="mt-4 ml-4"
+            variant="secondary"
+            icon="tabler:download"
+          >
+            Sponsorship Package
+          </Button>
+        </div>
+        <PDFViewer pdfUrl={sponsorshipPackage} client:load />
       </div>
     </div>
   </div>
