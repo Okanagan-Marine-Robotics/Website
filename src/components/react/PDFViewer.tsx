@@ -55,33 +55,35 @@ const PDFViewer = ({ pdfUrl }) => {
           </Document>
         </div>
       </div>
-      <div className="flex flex-row gap-4 justify-center mt-4">
-        <button
-          onClick={goToPreviousPage}
-          disabled={pageNumber === 1}
-          className={pageNumber === 1 ? "invisible" : ""}
-        >
-          <FaChevronLeft size={20} />
-        </button>
-        <div className="flex items-center gap-2">
-          {Array.from({ length: numPages }).map((_, index) => (
-            <div
-              key={index}
-              className={`w-2 h-2 rounded-full ${
-                index + 1 === pageNumber ? "bg-blue-500" : "bg-gray-300"
-              }`}
-            ></div>
-          ))}
+      {numPages !== undefined && numPages > 1 && (
+        <div className="flex flex-row gap-4 justify-center mt-4">
+          <button
+            onClick={goToPreviousPage}
+            disabled={pageNumber === 1}
+            className={pageNumber === 1 ? "invisible" : ""}
+          >
+            <FaChevronLeft size={20} />
+          </button>
+          <div className="flex items-center gap-2">
+            {Array.from({ length: numPages }).map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full ${
+                  index + 1 === pageNumber ? "bg-blue-500" : "bg-gray-300"
+                }`}
+              ></div>
+            ))}
+          </div>
+          <button
+            onClick={goToNextPage}
+            disabled={pageNumber === numPages}
+            className={pageNumber === numPages ? "invisible" : ""}
+          >
+            {/* Right arrow icon */}
+            <FaChevronRight size={20} />
+          </button>
         </div>
-        <button
-          onClick={goToNextPage}
-          disabled={pageNumber === numPages}
-          className={pageNumber === numPages ? "invisible" : ""}
-        >
-          {/* Right arrow icon */}
-          <FaChevronRight size={20} />
-        </button>
-      </div>
+      )}
     </>
   );
 };
