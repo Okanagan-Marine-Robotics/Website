@@ -67,8 +67,9 @@ const PDFViewer = ({ pdfUrl }) => {
           <div className="flex items-center gap-2">
             {Array.from({ length: numPages }).map((_, index) => (
               <div
+                onClick={() => setPageNumber(index + 1)}
                 key={index}
-                className={`w-2 h-2 rounded-full ${
+                className={`w-2 h-2 rounded-full cursor-pointer ${
                   index + 1 === pageNumber ? "bg-blue-500" : "bg-gray-300"
                 }`}
               ></div>
