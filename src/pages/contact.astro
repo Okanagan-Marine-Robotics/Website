@@ -2,6 +2,8 @@
 import Layout from "~/layouts/PageLayout.astro";
 import HeroText from "~/components/widgets/HeroText.astro";
 import ContactUs from "~/components/widgets/Contact.astro";
+import Hero2 from "~/components/widgets/Hero2.astro";
+import Button from "~/components/ui/Button.astro";
 const metadata = {
   title: "Contact",
 };
@@ -53,9 +55,27 @@ const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
   <HeroText tagline="Contact" title="Let's Connect!" />
 
+  <div class="flex flex-row justify-center">
+    <div class="flex flex-col gap-8">
+      <h2
+        class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl md:text-4xl"
+      >
+        Sign up online!
+      </h2>
+      <Button
+        variant="primary"
+        icon="fluent:link-edit-16-filled"
+        href="https://forms.gle/W3S6hmLY1N5GLubM8"
+        target="_blank"
+      >
+        Online Signup Form</Button
+      >
+    </div>
+  </div>
+
   <ContactUs
     id="form"
-    title="Drop us a message today!"
+    title="Or drop us a message today!"
     subtitle="Let us know whether you would like to join the club or if you have any questions."
     inputs={[
       {
