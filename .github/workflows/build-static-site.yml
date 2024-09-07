@@ -36,6 +36,11 @@ jobs:
           node-version: 22
       - name: Install dependencies
         run: npm install
+      - name: Create a .env file
+        env:
+          ENV_FILE: ${{ secrets.ENV }}
+        run: |
+          echo "$ENV_FILE" > .env
       - name: Build
         run: npm run build
       - name: Setup Pages
