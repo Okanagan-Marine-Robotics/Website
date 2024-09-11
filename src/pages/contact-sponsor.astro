@@ -19,30 +19,28 @@ const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 <script is:inline define:vars={{ serviceKey, templateKey, publicKey }}>
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("form");
-    const messageSentElement = document.getElementById("message-sent");
 
     emailjs.init(publicKey);
 
-    if (form) {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        console.log("Form submitted");
+    console.log(publicKey);
+    form.addEventListener("submit", (event) => {
+      console.log("submitted");
+      event.preventDefault();
+      console.log("Form submitted");
 
-        console.log(serviceKey, templateKey, publicKey);
-        console.log(form);
+      console.log(serviceKey, templateKey, publicKey);
+      console.log(form);
 
-        emailjs.sendForm(serviceKey, templateKey, form).then(
-          (response) => {
-            console.log("SUCCESS!", response.status, response.text);
-            form.reset();
-            messageSentElement.style.display = "block";
-          },
-          (error) => {
-            console.log("FAILED...", error);
-          }
-        );
-      });
-    }
+      emailjs.sendForm(serviceKey, templateKey, form).then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          form.reset();
+        },
+        (error) => {
+          console.log("FAILED...", error);
+        }
+      );
+    });
   });
 </script>
 
